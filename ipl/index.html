@@ -1,0 +1,77 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <script>
+         function checkScore(e) {
+            e.preventDefault();
+            let team1 = document.getElementById('team1Name').value;
+            let score1 = document.getElementById('team1Score').value;
+            let team2 = document.getElementById('team2Name').value;
+            let score2 = document.getElementById('team2Score').value;
+
+            let score1List = score1.split('/');
+            let score2List = score2.split('/');
+
+            if (!team1 || !team2 || !score1 || !score2) {
+               document.getElementById('textHere').innerHTML = 'Missing fields';
+               return;
+            } else if (score1List[1] > 10 || score2List[1] > 10) {
+               document.getElementById('textHere').innerHTML =
+                  'Not a valid score';
+            } else if (score1List[0] > score2List[0]) {
+               document.getElementById(
+                  'textHere'
+               ).innerHTML = `${team1} won by ${
+                  score1List[0] - score2List[0]
+               } runs`;
+            } else if (score1List[0] < score2List[0]) {
+               document.getElementById(
+                  'textHere'
+               ).innerHTML = `${team2} won by ${10 - score2List[1]} wickets`;
+            } else if (score1List[0] === score2List[0]) {
+               document.getElementById(
+                  'textHere'
+               ).innerHTML = `The match is draw`;
+            }
+         }
+
+         function getRuns() {
+            const runFormat = [0, 1, 2, 3, 4, 6];
+            const runs = document.getElementById('runs').value.split(',');
+
+            alert(runs);
+
+            let score = 0;
+            for (let i = 0; i < runs.length; i++) {
+               score += runFormat[i] * runs[i];
+            }
+            document.getElementById(
+               'runsHere'
+            ).innerHTML = `The runs are : ${score}`;
+         }
+      </script>
+   </head>
+   <body>
+      <form>
+         Team 1 name : <input type="text" id="team1Name" /><br />
+         Team 1 score : <input type="text" id="team1Score" /><br />
+         Team 2 name : <input type="text" id="team2Name" /><br />
+         Team 2 score : <input type="text" id="team2Score" /><br />
+         <p id="textHere"></p>
+         <button onclick="checkScore(event)">Check winner</button><br /><br />
+      </form>
+
+      <form>
+         Enter run format : <input type="text" id="runs" /> <br />
+         The format should be 0s, 1s, 2s, 3s, 4s, 6s
+         <button onclick="getRuns()">Get score</button><br />
+         <p id="runsHere"></p>
+      </form>
+   </body>
+</html>
