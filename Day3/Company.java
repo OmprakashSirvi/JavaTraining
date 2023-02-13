@@ -41,5 +41,4 @@ public class Company {
                 ", \nemployees='" + getEmployees() + "'" +
                 ", \nLead='" + getTeam_lead() + "'";
     }
-
 }
