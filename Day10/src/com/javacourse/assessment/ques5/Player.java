@@ -38,9 +38,25 @@ public class Player {
 
 		return new Player(details[0], dateOfBirth, details[2], numberOfMatches, runs, wickets, details[6], powerRating);
 	}
-	
+
 	public static String highestCount(List<Player> playerList) {
-		return null;
+		Map<String, Integer> nationalityMap = new HashMap<>();
+		for (Player player : playerList) {
+			if (nationalityMap.containsKey(player.getNationality())) {
+				nationalityMap.put(player.getNationality(), nationalityMap.get(player.getNationality()) + 1);
+			} else
+				nationalityMap.put(player.getNationality(), 1);
+		}
+		int maxIndex = -1;
+		String maxNationality= "";
+		for (String nation : nationalityMap.keySet()) {
+			if (maxIndex < nationalityMap.get(nation)) {
+				maxIndex = nationalityMap.get(nation);
+				maxNationality = nation;
+			}
+		}
+		
+		return maxNationality;
 	}
 
 	public String getName() {

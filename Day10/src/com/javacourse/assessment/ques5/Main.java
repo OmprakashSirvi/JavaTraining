@@ -2,7 +2,6 @@ package com.javacourse.assessment.ques5;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +23,7 @@ public class Main {
 			num--;
 		}
 
-		System.out.println("The nationality with maximum players : " + Player.highestCount(playerList));
+		System.out.println("\nThe nationality with maximum players : " + Player.highestCount(playerList));
 
 		sc.close();
 
