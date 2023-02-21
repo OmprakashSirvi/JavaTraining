@@ -18,6 +18,7 @@ public class Main {
 			System.out.println("3: Display Players");
 			System.out.println("4: Exit");
 			System.out.println("Enter your choice");
+			sc.nextLine();
 			index = sc.nextInt();
 			switch (index) {
 			case 1:
