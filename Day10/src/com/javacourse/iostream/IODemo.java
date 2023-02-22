@@ -15,13 +15,12 @@ public class IODemo {
 			System.out.println("File opened");
 
 			int i;
-
 			while ((i = fis.read()) != -1) {
 
 			}
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
