@@ -1,0 +1,93 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <link rel="stylesheet" href="./style/table.css" />
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div>
+         <a href="index.html"><i class="fa fa-home"></i></a>
+      </div>
+      <div class="login-box">
+         <h2>Add Player</h2>
+         <form>
+            <div class="user-box">
+               <input type="number" name="id" required="true" id="id" />
+               <label>Player ID</label>
+            </div>
+            <div class="user-box">
+               <input type="text" name="name" required="true" id="name" />
+               <label>Player Name</label>
+            </div>
+            <div class="user-box">
+               <input type="number" name="runs" required="true" id="runs" />
+               <label>Runs</label>
+            </div>
+            <button onclick="addPlayer(event)">Add player</button>
+            <button onclick="addPlayer(event)">Remove player</button>
+         </form>
+      </div>
+      <div>
+         <h3>Player</h3>
+      </div>
+
+      <div class="table-title">
+         <h3>Player Details</h3>
+      </div>
+      <table class="table-fill" id="playerDetails">
+         <thead>
+            <tr>
+               <th class="text-left">Id</th>
+               <th class="text-left">Name</th>
+               <th class="text-left">Runs</th>
+            </tr>
+         </thead>
+         <tbody class="table-hover" id="playerBody"></tbody>
+      </table>
+
+      <script>
+         function Player(id, name, runs) {
+            this.id = id;
+            this.name = name;
+            this.runs = runs;
+         }
+         console.log(localStorage);
+
+         let playerList = [];
+         if (localStorage.getItem('playerItem') === null) {
+            localStorage.setItem('playerItem', playerList);
+         } else {
+            playerList = localStorage.getItem('playerItem');
+         }
+
+         const addPlayer = (e) => {
+            e.preventDefault();
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const runs = document.getElementById('runs').value;
+
+            const table = document.getElementById('playerDetails');
+
+            const player = new Player(id, name, runs);
+
+            const row = table.insertRow();
+
+            const cellId = row.insertCell(0);
+            const cellName = row.insertCell(1);
+            const cellRuns = row.insertCell(2);
+            cellId.innerHTML = player.id;
+            cellName.innerHTML = player.name;
+            cellRuns.innerHTML = player.runs;
+         };
+      </script>
+   </body>
+</html>
