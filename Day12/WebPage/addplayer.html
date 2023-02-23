@@ -1,93 +1,175 @@
 <!-- @format -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
    <head>
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
-      <link rel="stylesheet" href="./style/table.css" />
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
+      <title>Add Player Form</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#a9b2c4, #6ba3e3);
+         }
+         form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 50%;
+            padding: 20px;
+            border: 1px solid;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+         }
+         label {
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+         }
+         input[type='text'] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            font-size: 16px;
+         }
+         button {
+            background-color: rgb(3, 74, 10);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+         }
+
+         .add {
+            margin-right: 100px;
+         }
+         button:hover {
+            background-color: #3e8e41;
+         }
+         table {
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 5px rgb(3, 74, 10);
+            background: linear-gradient(#a9c4ae, #6be383);
+         }
+         th,
+         td {
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+         }
+         th {
+            background-color: rgb(3, 74, 10);
+            color: #fff;
+         }
+         tr:hover {
+            background-color: #f5f5f5;
+         }
+         .delete {
+            color: red;
+            cursor: pointer;
+         }
+         .delete:hover {
+            text-decoration: underline;
+         }
+      </style>
    </head>
    <body>
-      <div>
-         <a href="index.html"><i class="fa fa-home"></i></a>
-      </div>
-      <div class="login-box">
-         <h2>Add Player</h2>
-         <form>
-            <div class="user-box">
-               <input type="number" name="id" required="true" id="id" />
-               <label>Player ID</label>
+      <center>
+         <br />
+         <br />
+         <h2>Player Detalis Form</h2>
+         <form onsubmit="return false">
+            <div>
+               <label for="pid">Player Id:</label>
+               <input type="text" name="pid" id="pid" />
             </div>
-            <div class="user-box">
-               <input type="text" name="name" required="true" id="name" />
-               <label>Player Name</label>
+            <div>
+               <label for="pname">Player Name:</label>
+               <input type="text" name="pname" id="pname" />
             </div>
-            <div class="user-box">
-               <input type="number" name="runs" required="true" id="runs" />
-               <label>Runs</label>
+            <div>
+               <label for="runs">Runs:</label>
+               <input type="text" name="runs" id="runs" />
             </div>
-            <button onclick="addPlayer(event)">Add player</button>
-            <button onclick="addPlayer(event)">Remove player</button>
+            <div>
+               <button onclick="addPlayer(event)" class="add">
+                  Add Player
+               </button>
+               <button onclick="removePlayer()" class="remove">
+                  Remove Player
+               </button>
+            </div>
          </form>
-      </div>
-      <div>
-         <h3>Player</h3>
-      </div>
-
-      <div class="table-title">
-         <h3>Player Details</h3>
-      </div>
-      <table class="table-fill" id="playerDetails">
+      </center>
+      <table border="2" id="tdata">
          <thead>
             <tr>
-               <th class="text-left">Id</th>
-               <th class="text-left">Name</th>
-               <th class="text-left">Runs</th>
+               <th>Player Id</th>
+               <th>Player Name</th>
+               <th>Runs</th>
+               <th>Select</th>
             </tr>
          </thead>
-         <tbody class="table-hover" id="playerBody"></tbody>
+         <tbody></tbody>
       </table>
 
       <script>
-         function Player(id, name, runs) {
-            this.id = id;
-            this.name = name;
-            this.runs = runs;
-         }
-         console.log(localStorage);
-
-         let playerList = [];
-         if (localStorage.getItem('playerItem') === null) {
-            localStorage.setItem('playerItem', playerList);
-         } else {
-            playerList = localStorage.getItem('playerItem');
-         }
-
-         const addPlayer = (e) => {
+         function addPlayer(e) {
             e.preventDefault();
-            const id = document.getElementById('id').value;
-            const name = document.getElementById('name').value;
+            const id = document.getElementById('pid').value;
+            const name = document.getElementById('pname').value;
             const runs = document.getElementById('runs').value;
+            const tableBody = document.getElementById('tdata');
 
-            const table = document.getElementById('playerDetails');
+            const newRow = tableBody.insertRow();
+            const nameCell = newRow.insertCell(0);
+            const nameCell1 = newRow.insertCell(1);
+            const nameCell2 = newRow.insertCell(2);
+            const nameCell3 = newRow.insertCell(3);
 
-            const player = new Player(id, name, runs);
+            nameCell.innerHTML = id;
+            nameCell1.innerHTML = name;
+            nameCell2.innerHTML = runs;
+            nameCell3.innerHTML = '<input type=checkbox value=id />';
+         }
 
-            const row = table.insertRow();
+         function removePlayer() {
+            let table = document.getElementById('tdata');
 
-            const cellId = row.insertCell(0);
-            const cellName = row.insertCell(1);
-            const cellRuns = row.insertCell(2);
-            cellId.innerHTML = player.id;
-            cellName.innerHTML = player.name;
-            cellRuns.innerHTML = player.runs;
-         };
+            for (let i = 1; i < table.rows.length; i++) {
+               let checkbox = table.rows[i].querySelector(
+                  'input[type=checkbox]'
+               );
+
+               if (checkbox.checked) {
+                  table.deleteRow(i);
+                  i--;
+               }
+
+               // // Get a reference to the table element
+               // let table = document.getElementById("tdata");
+
+               // // Get a reference to the last row in the table
+               // let lastRow = table.rows[table.rows.length - 1];
+
+               //     // Remove the last row from the table
+               //     table.deleteRow(lastRow.rowIndex);
+            }
+         }
       </script>
    </body>
 </html>
