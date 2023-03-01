@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="C:/Users/158300/Downloads/jar_files/mongo-java-driver-3.12.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/158300/Downloads/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,44 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task</title>
+      <script
+         src="https://code.jquery.com/jquery-3.6.3.js"
+         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+         crossorigin="anonymous"
+      ></script>
+   </head>
+   <body>
+      Date : <input type="date" id="datetimepicker" max="`${}`" />
+      <img src="./img/one.png" alt="one" class="one" />
+   </body>
+</html>
+
+<script>
+   $('document').ready(function () {
+      $('img').click(function () {
+         let src = $(this).attr('src');
+         if (src === './img/two.png') {
+            $(this).attr('src', './img/one.png');
+         } else {
+            $(this).attr('src', './img/two.png');
+         }
+      });
+      let dtToday = new Date();
+
+      let month = dtToday.getMonth() + 1;
+      let day = dtToday.getDate();
+      let year = dtToday.getFullYear();
+
+      if (month < 10) month = '0' + month.toString();
+      if (day < 10) day = '0' + day.toString();
+
+      var maxDate = year + '-' + month + '-' + day;
+      $('#datetimepicker').attr('min', maxDate);
+   });
+</script>

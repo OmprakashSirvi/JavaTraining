@@ -53,7 +53,6 @@ public class Main {
 			return;
 		}
 
-
 		for (ArrayList<String> account : accounts) {
 			if (account.get(0).equals(branchCode)) {
 				

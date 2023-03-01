@@ -3,7 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <link rel="stylesheet" href="./style/main.css" />
+      <script
+         src="https://code.jquery.com/jquery-3.6.3.js"
+         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+         crossorigin="anonymous"
+      ></script>
+
+      <script src="./js/database.js"></script>
 
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,10 +22,20 @@
          <a href="login.html">Login</a>
       </div>
       <div><a href="addplayer.html">Player</a></div>
+      <div><a href="task.html">23 - 01 - 2023 task</a></div>
+
+      <div>
+         <p class="divHello"></p>
+         <h1>First header</h1>
+         <h2>second header</h2>
+      </div>
    </body>
 </html>
 <script type="text/javascript">
-   $(document).ready(function () {
-      $('#divHello').append('<p>Hello world</p>');
+   $('document').ready(function () {
+      $('h1').click(function () {
+         $('h2').html('Welcome my boi').css('color', 'red');
+      });
+      $('.divHello').append('<p>Hello world</p>');
    });
 </script>
