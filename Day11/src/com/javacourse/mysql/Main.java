@@ -12,15 +12,16 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		TeamDBO teamDBO = new TeamDBO();
 
-		int index = sc.nextInt();
+		int index = 1;
 
 		int team_id;
 		String team_name, short_name, owner_name;
 
-		System.out.println(
-				"1: Add team\r\n" + "2: View teams\r\n" + "3: Delete team\r\n" + "4: Update Team\r\n" + "5: Exit");
 
 		while (index > 0) {
+			System.out.println(
+					"1: Add team\r\n" + "2: View teams\r\n" + "3: Delete team\r\n" + "4: Update Team\r\n" + "5: Exit");
+			index = sc.nextInt();
 			switch (index) {
 
 			case 1:
@@ -74,6 +75,7 @@ public class Main {
 
 			case 4:
 				System.out.println("Updating document");
+				System.out.println("Enter Id of the document to be updated");
 				team_id = sc.nextInt();
 				try {
 					Team team = teamDBO.getTeamById(team_id);

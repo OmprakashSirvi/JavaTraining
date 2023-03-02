@@ -76,6 +76,12 @@ VALUES (
 
 select * from productions;
 
+SELECT
+    production_name,
+    movie.movie_name
+from productions
+    join productions on production_id = movie.production_id;
+
 select
     production_id,
     production_name,

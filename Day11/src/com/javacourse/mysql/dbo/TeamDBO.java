@@ -22,6 +22,7 @@ public class TeamDBO {
 					resultSet.getString(4)));
 		}
 		connection.close();
+		prepareStatement.close();
 		return teamList;
 	}
 
@@ -35,10 +36,12 @@ public class TeamDBO {
 		if (resultSet.next()) {
 			Team retTeam = new Team(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
 					resultSet.getString(4));
-			
+
 			connection.close();
 			return retTeam;
 		}
+		
+		prepareStatement.close();
 		connection.close();
 		return null;
 	}
@@ -47,10 +50,22 @@ public class TeamDBO {
 		java.sql.Connection connection = ConnectionConfig.connect();
 		PreparedStatement prepareStatement = connection
 				.prepareStatement("update team set team_id=?, team_name=?, shortname=?, owner=?");
+
 		prepareStatement.setInt(1, team.getTeam_id());
 		prepareStatement.setString(2, team.getTeam_name());
 		prepareStatement.setString(3, team.getShort_name());
 		prepareStatement.setString(4, team.getOwner_name());
+
+		int updatedCols = prepareStatement.executeUpdate();
+		
+		if (updatedCols <1) {
+			prepareStatement.close();
+			connection.close();
+			return null;
+		}
+
+		prepareStatement = connection.prepareStatement("select * from team where team_id=?");
+		prepareStatement.setInt(1, team.getTeam_id());
 
 		ResultSet resultSet = prepareStatement.executeQuery();
 
@@ -62,6 +77,7 @@ public class TeamDBO {
 			return updatedTeam;
 		}
 
+		prepareStatement.close();
 		connection.close();
 		return null;
 	}
@@ -74,27 +90,35 @@ public class TeamDBO {
 		prepareStatement.setString(2, newTeam.getTeam_name());
 		prepareStatement.setString(3, newTeam.getShort_name());
 		prepareStatement.setString(4, newTeam.getOwner_name());
-		
+
 		if (prepareStatement.execute()) {
 			connection.close();
+			prepareStatement.close();
 			return true;
 		}
 		
+		connection.close();
+		prepareStatement.close();
+
 		return false;
 	}
-	
+
 	public boolean deleteTeam(int team_id) throws SQLException {
 		java.sql.Connection connection = ConnectionConfig.connect();
 
 		PreparedStatement preparedStatement = connection.prepareStatement("delete from team where team_id=?");
 		preparedStatement.setInt(1, team_id);
+
+		int executeUpdate = preparedStatement.executeUpdate();
+
+		preparedStatement.close();
+		connection.close();
 		
-		if (preparedStatement.execute()) {
-			connection.close();
+		if (executeUpdate > 0) {
 			return true;
 		}
-		
+
 		return false;
-		
+
 	}
 }
