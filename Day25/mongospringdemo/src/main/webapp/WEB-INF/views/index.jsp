@@ -1,19 +1,17 @@
 <!-- @format -->
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
-
-
 <!DOCTYPE html>
 <html>
    <head>
       <meta charset="ISO-8859-1" />
-      <title>Success</title>
+      <title>Home</title>
    </head>
    <body>
+      <div>This is home page</div>
       <div>
-         <p>Movie Name : ${movieName}</p>
-         <p>Movie Language : ${language}</p>
-         <p>Movie Director : ${director}</p>
+         <a href="/insertTrainee">insert</a>
       </div>
    </body>
 </html>

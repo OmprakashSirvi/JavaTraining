@@ -6,14 +6,9 @@ pageEncoding="ISO-8859-1"%>
 <html>
    <head>
       <meta charset="ISO-8859-1" />
-      <title>Home</title>
+      <title>Success</title>
    </head>
    <body>
-      This is my home page
-      <br />
-      <div>
-         <a href="movieForm">Create new movie</a>
-         <a href="viewMovies">View movies</a>
-      </div>
+      <div>Data Inserted</div>
    </body>
 </html>
