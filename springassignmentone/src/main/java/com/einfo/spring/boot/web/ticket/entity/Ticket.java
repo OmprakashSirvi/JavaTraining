@@ -1,28 +1,33 @@
 package com.einfo.spring.boot.web.ticket.entity;
 
 import java.sql.Date;
-import java.sql.Time;
 
-import org.springframework.data.annotation.Id;
+import com.einfo.spring.boot.web.show.entity.Show;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Ticket {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String mobileNumber;
-	private String movieName;
 	private Date bookingDate;
-	private Date showDate;
-	private Time showTime;
 	private int numberOfSeats;
 	private String seatType;
 	private String payementType;
 	private int transactionId;
 	private String status;
 	private int paidAmount;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Show show;
 
 	public int getId() {
 		return id;
@@ -40,36 +45,12 @@ public class Ticket {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public String getMovieName() {
-		return movieName;
-	}
-
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
-	}
-
 	public Date getBookingDate() {
 		return bookingDate;
 	}
 
 	public void setBookingDate(Date bookingDate) {
 		this.bookingDate = bookingDate;
-	}
-
-	public Date getShowDate() {
-		return showDate;
-	}
-
-	public void setShowDate(Date showDate) {
-		this.showDate = showDate;
-	}
-
-	public Time getShowTime() {
-		return showTime;
-	}
-
-	public void setShowTime(Time showTime) {
-		this.showTime = showTime;
 	}
 
 	public int getNumberOfSeats() {
@@ -120,33 +101,11 @@ public class Ticket {
 		this.paidAmount = paidAmount;
 	}
 
-	/**
-	 * @param id
-	 * @param mobileNumber
-	 * @param movieName
-	 * @param bookingDate
-	 * @param showDate
-	 * @param showTime
-	 * @param numberOfSeats
-	 * @param seatType
-	 * @param payementType
-	 * @param transactionId
-	 * @param status
-	 * @param paidAmount
-	 */
-	public Ticket(int id, String mobileNumber, String movieName, Date bookingDate, Date showDate, Time showTime,
-			int numberOfSeats, String seatType, String payementType, int transactionId, String status, int paidAmount) {
-		this.id = id;
-		this.mobileNumber = mobileNumber;
-		this.movieName = movieName;
-		this.bookingDate = bookingDate;
-		this.showDate = showDate;
-		this.showTime = showTime;
-		this.numberOfSeats = numberOfSeats;
-		this.seatType = seatType;
-		this.payementType = payementType;
-		this.transactionId = transactionId;
-		this.status = status;
-		this.paidAmount = paidAmount;
+	public Show getShow_id() {
+		return show;
+	}
+
+	public void setShow_id(Show show_id) {
+		this.show = show_id;
 	}
 }
