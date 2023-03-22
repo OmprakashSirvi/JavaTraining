@@ -1,7 +1,6 @@
 package com.einfo.spring.boot.web.ticket.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import com.einfo.spring.boot.web.ticket.dao.TicketDao;
@@ -20,7 +19,7 @@ public class TicketDaoImpl implements TicketDao {
 
 	public void setTicketRepository(TicketRepository ticketRepository) {
 		this.ticketRepository = ticketRepository;
-	}	
+	}
 
 	@Override
 	public Ticket create(Ticket ticket) {

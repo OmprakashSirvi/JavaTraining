@@ -360,7 +360,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_kfn7wMPwEe2a4L1L-NXPgw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_rFEX8MSvEe27M-SldxJeJQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_kKCGQ8PwEe2a4L1L-NXPgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Upc6gMekEe236vLgnM4uUg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_kKCGQ8PwEe2a4L1L-NXPgw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_kfn7wcPwEe2a4L1L-NXPgw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -388,7 +388,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_kfoi0MPwEe2a4L1L-NXPgw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_rFG0MMSvEe27M-SldxJeJQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_kKA4TMPwEe2a4L1L-NXPgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Upf90MekEe236vLgnM4uUg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_kKA4TMPwEe2a4L1L-NXPgw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_kfoi0cPwEe2a4L1L-NXPgw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -809,6 +809,7 @@
   <bindingTables xmi:id="_kKc9AcPwEe2a4L1L-NXPgw" elementId="org.eclipse.ui.genericeditor.genericEditorContext" bindingContext="_kKGX08PwEe2a4L1L-NXPgw">
     <bindings xmi:id="_kKc9AsPwEe2a4L1L-NXPgw" keySequence="CTRL+SHIFT+G" command="_kKCGZ8PwEe2a4L1L-NXPgw"/>
     <bindings xmi:id="_kKiclMPwEe2a4L1L-NXPgw" keySequence="F3" command="_kKCGVMPwEe2a4L1L-NXPgw"/>
+    <bindings xmi:id="_UUySEMekEe236vLgnM4uUg" keySequence="ALT+CTRL+H" command="_UUZ3ksekEe236vLgnM4uUg"/>
   </bindingTables>
   <bindingTables xmi:id="_kKc9DcPwEe2a4L1L-NXPgw" elementId="org.eclipse.debug.ui.memoryview" bindingContext="_kKGXt8PwEe2a4L1L-NXPgw">
     <bindings xmi:id="_kKc9DsPwEe2a4L1L-NXPgw" keySequence="ALT+CTRL+M" command="_kJ_DKMPwEe2a4L1L-NXPgw"/>
@@ -1434,6 +1435,12 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.xml.ui"/>
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
+  </descriptors>
+  <descriptors xmi:id="_UnkrMMekEe236vLgnM4uUg" elementId="org.eclipse.lsp4e.callHierarchy.callHierarchyView" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.lsp4e.callhierarchy.CallHierarchyView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.lsp4e"/>
+    <tags>View</tags>
+    <tags>categoryTag:Other</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -2539,6 +2546,11 @@
   <commands xmi:id="_kdd_p8PwEe2a4L1L-NXPgw" elementId="AUTOGEN:::org.eclipse.jdt.debug.ui.DisplayViewActions/org.eclipse.jdt.debug.ui.displayViewToolbar.Display" commandName="Display" description="Display Result of Evaluating Selected Text" category="_kJ6KlsPwEe2a4L1L-NXPgw"/>
   <commands xmi:id="_kdd_qMPwEe2a4L1L-NXPgw" elementId="AUTOGEN:::org.eclipse.jdt.debug.ui.DisplayViewActions/org.eclipse.jdt.debug.ui.displayViewToolbar.Inspect" commandName="Inspect" description="Inspect Result of Evaluating Selected Text" category="_kJ6KlsPwEe2a4L1L-NXPgw"/>
   <commands xmi:id="_kdemsMPwEe2a4L1L-NXPgw" elementId="AUTOGEN:::org.eclipse.ui.articles.action.contribution.view/org.eclipse.wst.wsi.ui.internal.actions.actionDelegates.ValidateWSIProfileActionDelegate" commandName="WS-I Profile Validator" description="Validate WS-I Message Log File" category="_kJ6KlsPwEe2a4L1L-NXPgw"/>
+  <commands xmi:id="_UUZQgcekEe236vLgnM4uUg" elementId="editor.action.triggerSuggest" commandName="Invoke Content Assist" category="_kJ6KlsPwEe2a4L1L-NXPgw">
+    <parameters xmi:id="_UUZ3kMekEe236vLgnM4uUg" elementId="org.eclipse.lsp4e.path.param" name="Resource Path (unnecessary, only to make lsp4e happy)" typeId="org.eclipse.lsp4e.pathParameterType"/>
+    <parameters xmi:id="_UUZ3kcekEe236vLgnM4uUg" elementId="org.eclipse.lsp4e.command.param" name="Command id (unnecessary, only to make lsp4e happy)" typeId="org.eclipse.lsp4e.commandParameterType"/>
+  </commands>
+  <commands xmi:id="_UUZ3ksekEe236vLgnM4uUg" elementId="org.eclipse.lsp4e.openCallHierarchy" commandName="Open Call Hierarchy" description="%command.open.call.hierarchy.decription" category="_kJ6KfsPwEe2a4L1L-NXPgw"/>
   <addons xmi:id="_kJU7rsPwEe2a4L1L-NXPgw" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kJU7r8PwEe2a4L1L-NXPgw" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_kJU7sMPwEe2a4L1L-NXPgw" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2550,7 +2562,7 @@
   <addons xmi:id="_kJU7tsPwEe2a4L1L-NXPgw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_kJU7t8PwEe2a4L1L-NXPgw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_kJhv8MPwEe2a4L1L-NXPgw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_q0SxAcSvEe27M-SldxJeJQ" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_kJ5jYMPwEe2a4L1L-NXPgw" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_kJ6KcMPwEe2a4L1L-NXPgw" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>

@@ -4,19 +4,24 @@ import java.sql.Date;
 
 import com.einfo.spring.boot.web.show.entity.Show;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "ticket")
 public class Ticket {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", nullable = false)
 	private int id;
+	
 	private String mobileNumber;
 	private Date bookingDate;
 	private int numberOfSeats;
@@ -25,8 +30,9 @@ public class Ticket {
 	private int transactionId;
 	private String status;
 	private int paidAmount;
-	
-	@OneToOne(cascade = CascadeType.ALL)
+
+	@ManyToOne
+	@JoinColumn(name = "show_id", referencedColumnName = "id")
 	private Show show;
 
 	public int getId() {
