@@ -1,7 +1,39 @@
-Code : <input [(ngModel)]="CustomerModel.code" type="text" /><br />
-name : <input [(ngModel)]="CustomerModel.name" type="text" /><br />
-amount : <input [(ngModel)]="CustomerModel.amount" type="text" /><br />
-<input type="button" (click)="addCustomer()" value="Add" />
+<form [formGroup]="CustomerModel.customerFormGroup">
+  Code :
+  <input
+    formControlName="CustomerCodeControl"
+    [(ngModel)]="CustomerModel.code"
+    type="text"
+  /><br />
+  name :
+  <input
+    formControlName="CustomerNameControl"
+    [(ngModel)]="CustomerModel.name"
+    type="text"
+  /><br />
+  amount :
+  <input
+    [ngModelOptions]="{ standalone: true }"
+    [(ngModel)]="CustomerModel.amount"
+    type="text"
+  /><br />
+  <input
+    type="button"
+    (click)="addCustomer()"
+    value="Add"
+    [disabled]="!CustomerModel.customerFormGroup.valid"
+  />
+</form>
+
+<div
+  [hidden]="
+    CustomerModel.customerFormGroup.controls['CustomerCodeControl'].hasErrors[
+      'pattern'
+    ]
+  "
+>
+  Customer code format is not valid
+</div>
 
 <table>
   <tr>

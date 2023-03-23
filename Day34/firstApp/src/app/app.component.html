@@ -1,0 +1,20 @@
+<div class="a-links">
+  <a [routerLink]="['home']">home</a>
+  <a [routerLink]="['master']">master</a>
+  <a [routerLink]="['customer']">customer</a>
+  <a [routerLink]="['supplier']">supplier</a>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<div>
+  Rate : {{ rate }} <br />
+  <input type="button" value="+" (click)="increament()" />
+  <input type="button" value="-" (click)="decreament()" *ngIf="quantity > 0" />
+  <br />
+
+  quantity : {{ quantity }} <br />
+  amount : {{ amount }}
+</div>

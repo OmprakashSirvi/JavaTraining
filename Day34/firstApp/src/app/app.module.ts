@@ -10,8 +10,13 @@ import { MasterComponent } from './master/master.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, CustomerComponent, SupplierComponent, MasterComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    SupplierComponent,
+    MasterComponent,
+    HomeComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

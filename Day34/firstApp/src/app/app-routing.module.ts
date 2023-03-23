@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerComponent } from './customer/customer.component';
+import { HomeComponent } from './home/home.component';
+import { MasterComponent } from './master/master.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'customer',
+    loadChildren: () =>
+      import('./customer/customer.module').then(
+        (module) => module.CustomerModule
+      ),
+  },
+  { path: 'master', component: MasterComponent },
+  { path: 'supplier', component: SupplierComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
