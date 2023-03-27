@@ -8,7 +8,6 @@ import com.einfo.spring.repository.PersonRepository;
 import com.einfo.spring.repository.ScoreRepository;
 import com.einfo.spring.service.ScoreService;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

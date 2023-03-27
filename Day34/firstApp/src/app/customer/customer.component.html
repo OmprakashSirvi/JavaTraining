@@ -23,27 +23,41 @@
     value="Add"
     [disabled]="!CustomerModel.customerFormGroup.valid"
   />
+  <input
+    type="button"
+    [disabled]="disable"
+    value="send to server"
+    (click)="postToServer()"
+  />
+  <input
+    type="button"
+    [disabled]="disable"
+    value="refresh data"
+    (click)="getFromServer()"
+  />
 </form>
 
 <div
-  [hidden]="
-    CustomerModel.customerFormGroup.controls['CustomerCodeControl'].hasErrors[
-      'pattern'
-    ]
-  "
+  *ngIf="CustomerModel.customerFormGroup.dirty"
+  [hidden]="!hasError('pattern', 'CustomerCodeControl')"
 >
   Customer code format is not valid
 </div>
+<div [hidden]="!hasError('required', 'CustomerNameControl')">
+  Customer name is required
+</div>
+<div [hidden]="!hasError('required', 'CustomerCodeControl')">
+  Customer code is required
+</div>
 
-<table>
-  <tr>
-    <th>code</th>
-    <th>name</th>
-    <th>amount</th>
-  </tr>
-  <tr *ngFor="let customer of Customers">
-    <td>{{ customer.code }}</td>
-    <td>{{ customer.name }}</td>
-    <td>{{ customer.amount }}</td>
-  </tr>
-</table>
+<div>Cust</div>
+
+<grid-ui
+  [grid-cols]="[
+    { colName: 'code' },
+    { colName: 'name' },
+    { colName: 'amount' }
+  ]"
+  [grid-data]="Customers"
+  (grid-selected)="selectCustomers($event)"
+></grid-ui>

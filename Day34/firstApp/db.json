@@ -1,0 +1,52 @@
+{
+  "Customers": [
+    {
+      "id": 1,
+      "code": "1001",
+      "name": "test_cust",
+      "amount": "100"
+    },
+    {
+      "code": "1002",
+      "name": "test_cust1",
+      "amount": "1000",
+      "id": 2
+    },
+    {
+      "code": "1001",
+      "name": "tesfsd",
+      "amount": "12313",
+      "id": 3
+    },
+    {
+      "code": "1004",
+      "name": "opsd",
+      "amount": "1002",
+      "id": 4
+    },
+    {
+      "code": "1001",
+      "name": "dfssfds",
+      "amount": "132",
+      "id": 5
+    },
+    {
+      "code": "1003",
+      "name": "rdsfs",
+      "amount": "23424",
+      "id": 6
+    },
+    {
+      "code": "1213",
+      "name": "sdaasd2",
+      "amount": "123",
+      "id": 7
+    },
+    {
+      "code": "1012",
+      "name": "fsdfsf",
+      "amount": "2344",
+      "id": 8
+    }
+  ]
+}

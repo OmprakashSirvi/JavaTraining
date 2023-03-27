@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th *ngFor="let col of gridCols">{{col.colName}}</th>
+  </tr>
+  <tr *ngFor="let data of gridData">
+    <td *ngFor="let col of gridCols">{{data[col.colName]}}</td>
+
+    <td>
+      <a (click)="selectGrid(data)" [routerLink]="['/customer']">Select</a>
+    </td>
+  </tr>
+</table>
+
+<!-- <table>
+  <tr>
+    <th>code</th>
+    <th>name</th>
+    <th>amount</th>
+  </tr>
+  <tr *ngFor="let customer of Customers">
+    <td>{{ customer.code }}</td>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.amount }}</td>
+  </tr>
+</table> -->
