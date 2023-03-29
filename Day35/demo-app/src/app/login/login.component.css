@@ -1,0 +1,24 @@
+input[type="text"] {
+  width: 200px;
+}
+input[type="password"] {
+  width: 200px;
+}
+input[type="email"] {
+  width: 200px;
+}
+input[type="button"] {
+  width: 100px;
+}
+input {
+  padding: 5px;
+  border: 2px solid #0331fe22;
+  background-color: #d0cafe22;
+  margin: 10px;
+}
+.form-class {
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+}

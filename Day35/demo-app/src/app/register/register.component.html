@@ -1,0 +1,67 @@
+<form class="form-class" [formGroup]="UserModel.userFormGroup">
+  <!-- Name -->
+
+  Name :
+  <input
+    type="text"
+    name="name"
+    id="name"
+    formControlName="UserNameControl"
+    [(ngModel)]="UserModel.name"
+  /><br />
+
+  <div>User name is required</div>
+
+  <!-- email -->
+
+  Email :
+  <input
+    type="email"
+    name="email"
+    id="email"
+    formControlName="UserEmailControl"
+    [(ngModel)]="UserModel.email"
+  /><br />
+
+  <div>Email is required</div>
+
+  <!-- role -->
+
+  Role : <input type="text" name="role" id="role" /><br />
+
+  <!-- password -->
+
+  Password :
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="UserPasswordControl"
+    [(ngModel)]="UserModel.password"
+  /><br />
+
+  <div
+    *ngIf="UserModel.userFormGroup.dirty"
+    [hidden]="!UserModel.hasError('required', 'UserPasswordControl')"
+  >
+    Password is required
+  </div>
+
+  <div
+    *ngIf="UserModel.userFormGroup.dirty"
+    [hidden]="!UserModel.hasError('pattern', 'UserPasswordControl')"
+  >
+    Password is not valid
+  </div>
+
+  <!-- confirm password -->
+
+  Confirm Password :
+  <input type="password" name="confPassword" id="confPassword" /><br />
+
+  <div>Password does not match</div>
+
+  <!-- login -->
+
+  <input type="button" value="submit" (click)="registerUser()" />
+</form>

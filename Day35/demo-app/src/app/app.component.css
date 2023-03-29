@@ -1,0 +1,14 @@
+.a-links{
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    flex-wrap: wrap;
+}
+a{
+    padding: 15px;
+}
+.home-icon{
+    width: 15px;
+    height: 15px;
+}
