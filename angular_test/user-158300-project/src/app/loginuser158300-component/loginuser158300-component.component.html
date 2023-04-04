@@ -1,0 +1,30 @@
+<form class="text-center border border-light p-5">
+  <input
+    type="text"
+    name="name"
+    id="name"
+    [(ngModel)]="login"
+    class="form-control mb-4"
+  />
+  <button type="button" (click)="getUser()" class="btn btn-primary mb-2">
+    Get User
+  </button>
+  <div [hidden]="ifUser">User not found</div>
+</form>
+
+<table [hidden]="hideTable">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.login }}</td>
+      <td><img src="{{ user.avatar_url }}" alt="no image" /></td>
+    </tr>
+  </tbody>
+</table>
